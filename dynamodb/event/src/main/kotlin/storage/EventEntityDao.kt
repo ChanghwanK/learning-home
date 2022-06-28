@@ -4,15 +4,10 @@ import entity.Event
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable
 import software.amazon.awssdk.enhanced.dynamodb.Key
 
-//interface AppDao {
-//    companion object {
-//        const val TABLE_NAME = "event"
-//    }
-//}
 
 class EventEntityDao(private val table: DynamoDbTable<Event>) {
     companion object {
-        const val Table_NAME = "event"
+        const val Table_NAME = "test"
     }
 
     fun insert(value: Event) {
