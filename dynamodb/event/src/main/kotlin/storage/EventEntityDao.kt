@@ -7,7 +7,7 @@ import software.amazon.awssdk.enhanced.dynamodb.Key
 
 class EventEntityDao(private val table: DynamoDbTable<Event>) {
     companion object {
-        const val Table_NAME = "test"
+        const val Table_NAME = "event"
     }
 
     fun insert(value: Event) {
