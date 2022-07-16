@@ -9,6 +9,9 @@ fun main() {
     val dbStorage = DynamoDBStorage(region = region)
     val dao = dbStorage.getAppDao()
 
-    dao.insert(Event.toEntity("Test-03", "Test 입니다."))
+    val entity = Event.toEntity("Test-01", "Test 입니다.")
+    dao.insert(entity)
+    val data = dao.read("test-01")
+    println("data >>> $data")
 }
 

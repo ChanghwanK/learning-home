@@ -1,8 +1,11 @@
 package storage
 
 import entity.Event
+import software.amazon.awssdk.core.pagination.sync.SdkIterable
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable
 import software.amazon.awssdk.enhanced.dynamodb.Key
+import software.amazon.awssdk.enhanced.dynamodb.internal.conditional.EqualToConditional
+import software.amazon.awssdk.enhanced.dynamodb.model.PageIterable
 
 
 class EventEntityDao(private val table: DynamoDbTable<Event>) {
@@ -20,5 +23,4 @@ class EventEntityDao(private val table: DynamoDbTable<Event>) {
             .build()
         return table.getItem(key)
     }
-
 }
