@@ -1,7 +1,17 @@
+locals {
+  common_tags = {
+    Name    = var.name
+    Service = var.service
+    Owner   = var.owner
+  }
+}
+
 resource "aws_vpc" "main" {
-  cidr_block = var.vpc_cidr_block
+  cidr_block           = var.vpc_cidr_block
   enable_dns_hostnames = var.enable_dns_hostnames
-  enable_dns_support = var.enable_dns_support
+  enable_dns_support   = var.enable_dns_support
+
+  tags = local.common_tags
 }
 
 resource "aws_subnet" "public" {

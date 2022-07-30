@@ -1,0 +1,4 @@
+.terraform
+*.tfstae
+*.tfstae.backup
+*/.terraform/*

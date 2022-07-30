@@ -17,3 +17,15 @@ variable "enable_dns_hostnames" {
 variable "enable_dns_support" {
   type = bool
 }
+
+variable "service" {
+  type = string
+}
+
+variable "owner" {
+  type = string
+}
+
+variable "name" {
+  type = string
+}
