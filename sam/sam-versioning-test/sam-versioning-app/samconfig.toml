@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "sam-versioning-test-app"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1gywpu5ok5t95"
+s3_prefix = "sam-versioning-test-app"
+region = "ap-northeast-2"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
