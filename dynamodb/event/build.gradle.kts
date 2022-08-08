@@ -15,6 +15,7 @@ dependencies {
     implementation("software.amazon.awssdk:dynamodb:2.17.219")
     implementation("software.amazon.awssdk:annotations")
     implementation("software.amazon.awssdk:dynamodb-enhanced:2.17.219")
+    implementation("com.amazonaws:aws-java-sdk-dynamodb:1.12.239")
     testImplementation(kotlin("test"))
 }
 

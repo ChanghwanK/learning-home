@@ -1,11 +1,12 @@
-import annotaion.PhoneNumberPrinter;
-import annotaion.PhoneNumberValidator;
+package annotaion;
+
 import java.util.Objects;
 
 public class PhoneNumberBook {
     private String name;
+
     private String nickName;
-    @PhoneNumberPrinter
+
     private String phoneNumber;
 
     public String getName() {
@@ -28,7 +29,7 @@ public class PhoneNumberBook {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(@PhoneNumberValidator String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

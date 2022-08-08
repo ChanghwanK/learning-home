@@ -1,4 +1,5 @@
 package dto
 
-class TestResponse {
-}
+data class TestResponse(
+    val message: String
+)

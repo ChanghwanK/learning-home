@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: "AWS::Serverless-2016-10-31"
+
+
+Resources:
+  TestFunc:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/main/kotlin
+      Handler: MainHandler::handleRequest
+      Runtime: java11
+      MemorySize: 2048
+      Timeout: 300
+      Events:
+        TestApi:
+          Type: Api
+          Properties:
+            Path: /test
+            Method: GET
+
+Outputs:
+  ProdEndpoint:
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"

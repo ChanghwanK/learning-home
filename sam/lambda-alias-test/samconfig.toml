@@ -1,0 +1,24 @@
+version = 0.1
+[prod]
+[prod.deploy]
+[prod.deploy.parameters]
+stack_name = "lambda-alias-test"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1gywpu5ok5t95"
+s3_prefix = "lambda-alias-test"
+region = "ap-northeast-2"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []
+
+[prd]
+[prd.deploy]
+[prd.deploy.parameters]
+stack_name = "alias-test-lambda"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1gywpu5ok5t95"
+s3_prefix = "alias-test-lambda"
+region = "ap-northeast-2"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []

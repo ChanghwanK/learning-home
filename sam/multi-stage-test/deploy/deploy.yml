@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  pre_build:
+    commands:
+      - echo 'pre-build start'
+  build:
+    commands:
+      - echo 'sam build started'
+      - sam build
+      - echo 'Build completed on'
+  post_build:
+    commands:
+      - sam deploy --config-env ${stage} --capabilities CAPABILITY_NAMED_IAM --no-confirm-changeset
+      - echo 'sam deploy done'
