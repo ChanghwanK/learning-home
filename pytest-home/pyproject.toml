@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pytest-home"
+version = "0.1.0"
+description = "pytest-honme-changhwan"
+authors = ["DevBloo <zpswl45@naver.com>"]
+license = "MIT 2.0"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+pydantic = "^1.9.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

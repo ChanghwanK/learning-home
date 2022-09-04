@@ -1,19 +1,19 @@
-def return_none():
-  print("hello")
-  return None
-
-
-def check():
-  data = return_none()
-  
-  if data is None:
-    print("None")
-  else:
-    print("머고")
+class BookDto:
+  class BookRequestDto:
+    def __init__(self, title, price):
+      self.title = title
+      self.price = price
+      
+  class BookResponse:
+    def __init__(self, message, data):
+      self.message = message
+      self.data = data
+      
     
-  if not data:
-    print("None 2")
-  else:
-    print("머고")
-    
-check()
+request = BookDto.BookRequestDto(title="Test", price=12000)
+response = BookDto.BookResponse(message="Success", data={"book": "Test Book"})
+
+print(request)
+print(response)
+
+clear
