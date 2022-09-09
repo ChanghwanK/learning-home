@@ -37,7 +37,6 @@ class HashTable:
         else:
             self._store[hash_value] = [[key, value]]
 
-
     def linear_save(self, key, hash_value, value):
         if self._store[hash_value] != 0:
             for index in range(hash_value, len(self._store)):
@@ -47,7 +46,7 @@ class HashTable:
                 elif self._store[index][0] == key:
                     self._store[index][1] = value
                     return
-        else
+        else:
             self._store[hash_value] = [key, value]
 
     def chaining_get_data(self, index_key, hash_value):
