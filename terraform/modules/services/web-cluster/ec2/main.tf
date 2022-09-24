@@ -26,17 +26,13 @@ resource "aws_instance" "example" {
   ami                    = data.aws_ami.amzn2_latest.id
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.sg_example.id]
-  key_name               = aws_key_pair.example_server_key_pair.key_name
+  key_name               = aws_key_pair.example_instance_key_pair.key_name
 
   user_data = <<-EOF
-              #!/bin/bash
+              #! /bin/bash
               echo "Hello, World" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
-
-  tags = {
-    "name" = "test-amzn2"
-  }
 
   depends_on = [
     aws_key_pair.example_instance_key_pair
@@ -45,7 +41,7 @@ resource "aws_instance" "example" {
 
 resource "aws_key_pair" "example_instance_key_pair" {
   key_name   = "example-key-pair"
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = file("~/.ssh/example-key-pair.pub")
 }
 
 resource "aws_security_group" "sg_example" {
